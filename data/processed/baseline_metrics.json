@@ -1,0 +1,14 @@
+{
+  "baseline_1_majority": {
+    "model": "Majority Class (Trivial)",
+    "majority_class": "device_connectivity",
+    "accuracy": 0.1667,
+    "macro_f1": 0.0408
+  },
+  "baseline_2_simple": {
+    "model": "TF-IDF + Linear Classifier (Simple)",
+    "engine": "pure-python (TF-IDF + Naive Bayes fallback)",
+    "accuracy": 0.4138,
+    "macro_f1": 0.4112
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "evaluation_count": 5,
+  "intent_classification": {
+    "accuracy": 0.4,
+    "macro_f1": 0.4
+  },
+  "escalation_engine": {
+    "precision": 0.2,
+    "recall": 1.0,
+    "f1": 0.3333,
+    "tp": 1,
+    "fp": 4,
+    "fn": 0,
+    "tn": 0
+  },
+  "llm_judge_rubric": {
+    "groundedness": 5.0,
+    "actionability": 4.0,
+    "tone": 5.0,
+    "safety": 5.0,
+    "composite": 4.75
+  },
+  "human_calibration": {
+    "sample_size": 40,
+    "exact_match_pct": 7.5,
+    "within_1_pct": 12.5,
+    "directional_bias": 0.05,
+    "pearson_correlation": 0.093
+  },
+  "sample_failure_cases": [
+    {
+      "type": "INTENT_MISCLASSIFICATION",
+      "query": "tracks keep buffering forever on wifi even though youtube works fine",
+      "gold": "playback_audio_bugs",
+      "predicted": "chitchat_feedback_venting"
+    },
+    {
+      "type": "FALSE_ESCALATION",
+      "query": "tracks keep buffering forever on wifi even though youtube works fine",
+      "reason": "Classifier confidence (0.65) is below safe threshold (0.70)."
+    },
+    {
+      "type": "FALSE_ESCALATION",
+      "query": "car dashboard media player shows song info but no sound comes out of the vehicle speakers",
+      "reason": "Top retrieval similarity (0.14) < 0.45. No historical resolution found."
+    },
+    {
+      "type": "INTENT_MISCLASSIFICATION",
+      "query": "certain tracks in my playlist are dimmed and skip automatically without playing",
+      "gold": "content_availability",
+      "predicted": "playback_audio_bugs"
+    },
+    {
+      "type": "FALSE_ESCALATION",
+      "query": "certain tracks in my playlist are dimmed and skip automatically without playing",
+      "reason": "Top retrieval similarity (0.42) < 0.45. No historical resolution found."
+    }
+  ]
+}
